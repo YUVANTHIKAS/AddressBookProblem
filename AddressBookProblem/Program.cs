@@ -1,4 +1,6 @@
 ﻿using System;
+using static AddressBookProblem.AddressBook;
+
 namespace AddressBook
 {
     class Program
@@ -6,7 +8,9 @@ namespace AddressBook
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to AddressBook Problem Statement");
-            
+            CreateAddressBook book = new CreateAddressBook();
+            book.CreateContact();
+
 
         }
     }
