@@ -1,12 +1,12 @@
-﻿using AddressBookProblem;
-using System;
+﻿using System;
 namespace AddressBook
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the option to proceed\n 1.Create Contact\n 2.Edit Contact\n 3.Display Contact\n 4.Exit");
+            Console.WriteLine("Enter the option to proceed\n 1.Create Contact\n 2.Edit Contact\n 3.Display Contact\n " +
+                "4.Delete Contact\n 4.Exit");
             bool flag = true;
             CreateAddressBook createAddressBook = new CreateAddressBook();
             while (flag)
@@ -23,9 +23,14 @@ namespace AddressBook
                         createAddressBook.EditContact(input);
                         break;
                     case 3:
-                        createAddressBook.Display();
+                        Console.WriteLine("Enter the name of contact details to be deleted");
+                        string name = Console.ReadLine();
+                        createAddressBook.DeleteContact(name);
                         break;
                     case 4:
+                        createAddressBook.Display();
+                        break;
+                    case 5:
                         flag = false;
                         break;
                 }

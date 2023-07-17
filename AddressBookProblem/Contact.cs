@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace AddressBookProblem
 {
-    
-    
-        public class Contact
-        {
+
+
+    public class Contact
+    {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
@@ -20,5 +20,7 @@ namespace AddressBookProblem
         public string Email { get; set; }
 
     }
+
+
     
 }

@@ -1,12 +1,12 @@
-﻿using System;
+﻿using AddressBookProblem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AddressBookProblem
+namespace AddressBook
 {
-
     public class CreateAddressBook
     {
         List<Contact> createAddressBook = new List<Contact>();
@@ -67,6 +67,18 @@ namespace AddressBookProblem
                 }
             }
         }
+        public void DeleteContact(string name)
+        {
+            Contact contact = new Contact();
+            foreach (var data in createAddressBook)
+            {
+                if (contact.FirstName.Equals(name) || contact.LastName.Equals(name))
+                {
+                    contact = data;
+                }
+            }
+            createAddressBook.Remove(contact);
+        }
         public void Display()
         {
             foreach (var data in createAddressBook)
@@ -75,6 +87,5 @@ namespace AddressBookProblem
                     + "\n" + data.State + "\n" + data.Zip + "\n" + data.PhoneNumber + "\n" + data.Email);
             }
         }
-
     }
 }
