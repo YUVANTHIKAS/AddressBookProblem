@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AddressBookProblem
+namespace AddressBook
 {
-
-
     public class Contact
     {
         public string FirstName { get; set; }
@@ -20,7 +18,4 @@ namespace AddressBookProblem
         public string Email { get; set; }
 
     }
-
-
-    
 }

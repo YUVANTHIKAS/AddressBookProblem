@@ -5,36 +5,35 @@ namespace AddressBook
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the option to proceed\n 1.Create Contact\n 2.Edit Contact\n 3.Display Contact\n " +
-                "4.Delete Contact\n 4.Exit");
+            Console.WriteLine("Enter your option to proceed:\n1.Create Contact\n2.Add to Dictionary\n3.Edit Contact\n4.Display Contact\n5.Exit ");
             bool flag = true;
-            CreateAddressBook createAddressBook = new CreateAddressBook();
+            AddressBook address = new AddressBook();
             while (flag)
             {
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
                     case 1:
-                        createAddressBook.CreateContact();
+                        address.CreateContact();
                         break;
                     case 2:
-                        Console.WriteLine("Enter the name to edit contact details");
-                        string input = Console.ReadLine();
-                        createAddressBook.EditContact(input);
+                        address.AddAddressBookToDictionary();
                         break;
                     case 3:
-                        Console.WriteLine("Enter the name of contact details to be deleted");
+                        Console.WriteLine("Enter name to edit:");
                         string name = Console.ReadLine();
-                        createAddressBook.DeleteContact(name);
+                        address.EditContact(name);
                         break;
                     case 4:
-                        createAddressBook.Display();
+                        address.display();
                         break;
                     case 5:
                         flag = false;
                         break;
+
                 }
             }
+
         }
     }
 }
