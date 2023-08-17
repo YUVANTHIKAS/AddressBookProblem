@@ -1,10 +1,15 @@
-﻿using System;
+﻿using CsvHelper;
 using Newtonsoft.Json;
-using CsvHelper;
-using AddressBook;
+using System;
+using System.Collections.Generic;
+using System.Formats.Asn1;
 using System.Globalization;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace AddressBookProblem
+namespace AddressBook
 {
     public class CreateAddressBook
     {
@@ -353,6 +358,17 @@ namespace AddressBookProblem
                     }
                 }
             }
+        }
+        public void WriteToJsonFile(string filepath)
+        {
+            var json = JsonConvert.SerializeObject(dict);
+            File.WriteAllText(filepath, json);
+        }
+        public void ReadFromJsonFile(string filepath)
+        {
+            var json = File.ReadAllText(filepath);
+            dict = JsonConvert.DeserializeObject<Dictionary<string, List<Contact>>>(json);
+            Display();
         }
     }
 }
